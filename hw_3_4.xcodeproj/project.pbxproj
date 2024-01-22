@@ -66,16 +66,11 @@
 		AC1232EC2B5DAEAF0055A84E /* hw_3_4 */ = {
 			isa = PBXGroup;
 			children = (
+				AC42FCAC2B5EB30200EF6D25 /* AppDelegate */,
+				AC42FCAD2B5EB32E00EF6D25 /* Common */,
 				AC674D5F2B5E69B20086C021 /* Model */,
 				AC1233012B5DAF5C0055A84E /* MakeView */,
-				AC1232ED2B5DAEAF0055A84E /* AppDelegate.swift */,
-				AC1232EF2B5DAEAF0055A84E /* SceneDelegate.swift */,
-				AC1232F12B5DAEAF0055A84E /* ViewController.swift */,
-				AC674D5D2B5E4D8D0086C021 /* SignUpViewController.swift */,
-				AC1233092B5DE2010055A84E /* LoginViewController.swift */,
-				AC1233072B5DDEE70055A84E /* ChangeNumberViewController.swift */,
-				AC1232F62B5DAEB10055A84E /* Assets.xcassets */,
-				AC1232F82B5DAEB10055A84E /* LaunchScreen.storyboard */,
+				AC42FCAE2B5EB35C00EF6D25 /* Resourse */,
 				AC1232FB2B5DAEB10055A84E /* Info.plist */,
 			);
 			path = hw_3_4;
@@ -87,6 +82,35 @@
 				AC1233022B5DAF700055A84E /* MakeView.swift */,
 			);
 			path = MakeView;
+			sourceTree = "<group>";
+		};
+		AC42FCAC2B5EB30200EF6D25 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AC1232EF2B5DAEAF0055A84E /* SceneDelegate.swift */,
+				AC1232ED2B5DAEAF0055A84E /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AC42FCAD2B5EB32E00EF6D25 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AC1232F12B5DAEAF0055A84E /* ViewController.swift */,
+				AC1233072B5DDEE70055A84E /* ChangeNumberViewController.swift */,
+				AC1233092B5DE2010055A84E /* LoginViewController.swift */,
+				AC674D5D2B5E4D8D0086C021 /* SignUpViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AC42FCAE2B5EB35C00EF6D25 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				AC1232F82B5DAEB10055A84E /* LaunchScreen.storyboard */,
+				AC1232F62B5DAEB10055A84E /* Assets.xcassets */,
+			);
+			path = Resourse;
 			sourceTree = "<group>";
 		};
 		AC674D5F2B5E69B20086C021 /* Model */ = {

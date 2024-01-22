@@ -11,9 +11,7 @@ class ViewController: UIViewController {
     
     private lazy var loginLabel = MakeView.shared.makerLabel(text: "Login",textColor: UIColor.init(hex: "#000000"),textSize: 18,textWeight: .bold)
     
-    
     private lazy var userIcon = MakeView.shared.makerImage(imageName: "userIcon",imageTintColor: UIColor.init(hex: "#000000"))
-    
     
     private lazy var welcomeBackLabel = MakeView.shared.makerLabel(text: "Welcome back , Rohit thakur",textColor: UIColor.init(hex: "#5B5B5B"),textSize: 14)
     
@@ -34,12 +32,17 @@ class ViewController: UIViewController {
     private lazy var dontHaveAccountLabel = MakeView.shared.makerLabel(text: "You Don’t have an account ?",textColor: UIColor.init(hex: "#000000", alpha: 0.6),textSize: 11)
     
     private lazy var signUpBtn = MakeView.shared.makerButton(buttonSetTitle: "Sign Up",buttonSetTitleColor: UIColor.init(hex: "#000000"),buttonTitleSize: 11,buttonImage: nil, buttonBackgroundColor: UIColor.init(hex: "#F6F6F6"),buttonTitleWeight: .bold, buttonSelector: #selector(signUpBtnTapped(sender: )), buttonSelf: self)
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        setupUI()
-       
     }
 
+    
     private func setupUI(){
         view.backgroundColor = .init(hex: "#F6F6F6")
         
@@ -57,80 +60,99 @@ class ViewController: UIViewController {
         view.addSubview(signUpBtn)
         
         
+        setupImage()
+        setupLabel()
+        setupTF()
+        setupButton()
         
-      
+        
+        func setupLabel(){
             loginLabel.snp.makeConstraints { make in
                 make.top.equalTo(view.safeAreaLayoutGuide).offset(8)
                 make.leading.equalToSuperview().offset(24)
             }
-        userIcon.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-            make.leading.equalTo(loginLabel.snp.trailing).offset(4)
-            make.width.equalTo(20)
-            make.height.equalTo(19)
-        }
-        
+            
             welcomeBackLabel.snp.makeConstraints { make in
                 make.top.equalTo(userIcon.snp.bottom).offset(5)
                 make.leading.equalToSuperview().offset(24)
             }
-        shoppingImage.snp.makeConstraints { make in
-            make.top.equalTo(welcomeBackLabel.snp.bottom).offset(49)
-            make.leading.equalToSuperview().offset(57)
-            make.trailing.equalToSuperview().offset(-61)
-            make.height.equalTo(231)
-            make.width.equalTo(296)
-        }
             
             enterMobileNumberLabel.snp.makeConstraints { make in
                 make.top.equalTo(shoppingImage.snp.bottom).offset(15)
                 make.centerX.equalToSuperview()
             }
-        enterNumberTF.snp.makeConstraints { make in
-            make.top.equalTo(enterMobileNumberLabel.snp.bottom).offset(31)
-            make.horizontalEdges.equalToSuperview().inset(23)
-            make.height.equalTo(43)
-        }
-        changeNumberBtn.snp.makeConstraints { make in
-            make.top.equalTo(enterNumberTF.snp.bottom).offset(11)
-            make.trailing.equalToSuperview().offset(-41)
-            make.width.equalTo(110)
-            make.height.equalTo(18)
-        }
-        loginBtn.snp.makeConstraints { make in
-            make.top.equalTo(changeNumberBtn.snp.bottom).offset(35)
-            make.horizontalEdges.equalToSuperview().inset(23)
-            make.height.equalTo(43)
-        }
-        googleIcon.snp.makeConstraints { make in
-            make.top.equalTo(loginBtn.snp.bottom).offset(45)
-            make.height.width.equalTo(21)
-            make.leading.equalToSuperview().offset(160)
-            //make.bottom.equalTo(dontHaveAccountLabel.snp.top).offset(-87)
-            //make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-135)
-        }
+            
             googleLabel.snp.makeConstraints { make in
                 make.top.equalTo(loginBtn.snp.bottom).offset(45)
                 make.leading.equalTo(googleIcon.snp.trailing).offset(11)
                 make.centerY.equalTo(googleIcon.snp.centerY)
                 make.width.equalTo(51)
-               // make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-135)
-               // make.bottom.equalTo(dontHaveAccountLabel.snp.top).offset(-87)
             }
-            
             dontHaveAccountLabel.snp.makeConstraints { make in
                 make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-30)
                 make.leading.equalToSuperview().offset(97)
             }
             
-        
-        signUpBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-30)
-            make.leading.equalTo(dontHaveAccountLabel.snp.trailing)
-            make.trailing.equalToSuperview().offset(-97)
-            make.centerY.equalTo(dontHaveAccountLabel.snp.centerY)
         }
+        
+        
+        func setupImage(){
+            userIcon.snp.makeConstraints { make in
+                make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+                make.leading.equalTo(loginLabel.snp.trailing).offset(4)
+                make.width.equalTo(20)
+                make.height.equalTo(19)
+            }
+            
+            shoppingImage.snp.makeConstraints { make in
+                make.top.equalTo(welcomeBackLabel.snp.bottom).offset(49)
+                make.leading.equalToSuperview().offset(57)
+                make.trailing.equalToSuperview().offset(-61)
+                make.height.equalTo(231)
+                make.width.equalTo(296)
+            }
+            
+            googleIcon.snp.makeConstraints { make in
+                make.top.equalTo(loginBtn.snp.bottom).offset(45)
+                make.height.width.equalTo(21)
+                make.leading.equalToSuperview().offset(160)
+            }
+        }
+        
+            
+        func setupTF(){
+            enterNumberTF.snp.makeConstraints { make in
+                make.top.equalTo(enterMobileNumberLabel.snp.bottom).offset(31)
+                make.horizontalEdges.equalToSuperview().inset(23)
+                make.height.equalTo(43)
+            }
+        }
+       
+        
+        func setupButton(){
+            changeNumberBtn.snp.makeConstraints { make in
+                make.top.equalTo(enterNumberTF.snp.bottom).offset(11)
+                make.trailing.equalToSuperview().offset(-41)
+                make.width.equalTo(110)
+                make.height.equalTo(18)
+            }
+            
+            loginBtn.snp.makeConstraints { make in
+                make.top.equalTo(changeNumberBtn.snp.bottom).offset(35)
+                make.horizontalEdges.equalToSuperview().inset(23)
+                make.height.equalTo(43)
+            }
+    
+            signUpBtn.snp.makeConstraints { make in
+                make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-30)
+                make.leading.equalTo(dontHaveAccountLabel.snp.trailing)
+                make.trailing.equalToSuperview().offset(-97)
+                make.centerY.equalTo(dontHaveAccountLabel.snp.centerY)
+            }
+        }
+       
     }
+    
     
     
     @objc func changeNumberBtnTapped(sender: UIButton){
@@ -147,8 +169,6 @@ class ViewController: UIViewController {
         let vc = SignUpViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
     
     @objc func enterNumberTFTapped(sender: Any) {
         guard let enteredText = enterNumberTF.text else { return }
