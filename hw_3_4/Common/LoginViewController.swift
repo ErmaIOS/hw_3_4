@@ -48,7 +48,7 @@ class LoginViewController: UIViewController{
         view.backgroundColor = UIColor.init(hex: "#F6F6F6")
         
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
 
        
         
@@ -98,21 +98,21 @@ extension LoginViewController: UITableViewDataSource {
    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-       
-               cell.textLabel?.text = contacts[indexPath.row].name
-               cell.textLabel?.textColor = UIColor.init(hex: "#000000")
-               cell.textLabel?.font = .systemFont(ofSize: 17)
-               cell.imageView?.image = UIImage(named: contacts[indexPath.row].image)
-               cell.detailTextLabel?.text = contacts[indexPath.row].phoneNumber
-               cell.detailTextLabel?.textColor = UIColor.init(hex: "#8A8A8D")
-               cell.detailTextLabel?.font = .systemFont(ofSize: 14)
-       
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+//       
+//               cell.textLabel?.text = contacts[indexPath.row].name
+//               cell.textLabel?.textColor = UIColor.init(hex: "#000000")
+//               cell.textLabel?.font = .systemFont(ofSize: 17)
+//               cell.imageView?.image = UIImage(named: contacts[indexPath.row].image)
+//               cell.detailTextLabel?.text = contacts[indexPath.row].phoneNumber
+//               cell.detailTextLabel?.textColor = UIColor.init(hex: "#8A8A8D")
+//               cell.detailTextLabel?.font = .systemFont(ofSize: 14)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
                return cell
                
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return 10
     }
     
 }
